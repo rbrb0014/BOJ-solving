@@ -31,9 +31,38 @@
             ]
         },
         {
-            "label": "c execute",
+            "label": "g++ compile",
             "type": "shell",
-            "command": ".\\Folder_c/${fileBasenameNoExtension}.exe",
+            "command": "g++",
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "args": [
+                "-g",
+                "-o",
+                "${fileBasenameNoExtension}.exe",
+                "${file}"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": true
+            },
+            "problemMatcher": [
+                "$gcc"
+            ]
+        },
+        {
+            "label": "exe execute",
+            "type": "shell",
+            "command": "${fileDirname}\\${fileBasenameNoExtension}.exe",
             "group": {
                 "kind": "test",
                 "isDefault": true
@@ -46,6 +75,53 @@
                 "showReuseMessage": true,
                 "clear": true
             }
+        },
+        {
+            "label": "iverilog_output",
+            "type": "shell",
+            "command": "iverilog",
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "args": [
+                "-o",
+                "${fileBasenameNoExtension}.vvp",
+                "${file}"
+            ],
+            "group": "build",
+            "problemMatcher": [
+                "$eslint-stylish"
+            ]
+        },
+        {
+            "label": "iverilog_VVP",
+            "type": "shell",
+            "command":"vvp",
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "args":[
+                "${fileBasenameNoExtension}.vvp"
+            ],
+            "group": "test",
+            "problemMatcher": [
+                "$eslint-stylish"
+            ]
+        },
+        {
+            "label": "iverilog_GTK",
+            "type": "shell",
+            "command":"gtkwave",
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "args":[
+                "test_output.vcd"
+            ],
+            "group": "test",
+            "problemMatcher": [
+                "$eslint-stylish"
+            ]
         },
         {
             "label": "python execute",
