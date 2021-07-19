@@ -9,7 +9,7 @@ int dp[MAX];
 int main()
 {
     int n;
-    scanf("%d", &n);
+    cin>>n;
     
     return 0;
 }
