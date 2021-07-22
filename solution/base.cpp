@@ -1,4 +1,4 @@
-#include <iostream>
+#include <cstdio>
 #include <cstring>
 using namespace std;
 //최댓값 설정
@@ -9,7 +9,7 @@ int dp[MAX];
 int main()
 {
     int n;
-    cin>>n;
+    scanf("%d",&n);
     
     return 0;
 }
