@@ -29,7 +29,7 @@
             "externalConsole": false,
             "MIMode": "gdb",
             //MinGW 경로 지정이 필요함
-            "miDebuggerPath": "C:\\Mingw64$\\bin\\gdb.exe",
+            "miDebuggerPath": "C:\\Mingw64\\bin\\gdb.exe",
             "setupCommands": [
                 {
                     "description": "Enable pretty-printing for gdb",
