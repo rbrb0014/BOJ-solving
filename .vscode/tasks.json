@@ -2,7 +2,7 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "gcc compile",
+            "label": "gcc build",
             "type": "shell",
             "command": "gcc",
             "options": {
@@ -31,7 +31,7 @@
             ]
         },
         {
-            "label": "g++ compile",
+            "label": "g++ build",
             "type": "shell",
             "command": "g++",
             "options": {
@@ -58,6 +58,29 @@
             "problemMatcher": [
                 "$gcc"
             ]
+        },
+        {
+            "label": "go build",
+            "type":"shell",
+            "command":"go",
+            "options":{
+                "cwd":"${fileDirname}"
+            },
+            "args":[
+
+            ],
+            "group":{
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": true
+            },//작성 미완료
         },
         {
             "label": "exe execute",
@@ -122,26 +145,6 @@
             "problemMatcher": [
                 "$eslint-stylish"
             ]
-        },
-        {
-            "label": "python execute",
-            "type": "shell",
-            "command": "python",
-            "args": [
-                "${file}"
-            ],
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            },
-            "presentation": {
-                "echo": true,
-                "reveal": "always",
-                "focus": false,
-                "panel": "shared",
-                "showReuseMessage": true,
-                "clear": true
-            }
         }
     ]
 }
