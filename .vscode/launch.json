@@ -19,7 +19,7 @@
             "projectName": "KIM_GYUJIN_base_files_cd894a2f"
         },
         {
-            "type": "java",
+            "type": "cppdbg",
             "name": "Launch FrameTest",
             "request": "launch",
             "program": "${fileDirname}\\${fileBasenameNoExtension}.exe",
